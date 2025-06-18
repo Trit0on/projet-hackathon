@@ -7,12 +7,12 @@
 		<div class="flex items-center justify-between">
 			<a href="/" class="flex items-center space-x-6">
 				<div class="w-20 h-20 overflow-hidden flex items-center justify-center">
-					<img src="/logo.png" alt="Éco-Boost Logo" class="w-full h-full object-contain" />
+					<img src="/logo.png" alt="Eco-Quest Logo" class="w-full h-full object-contain" />
 				</div>
 				<div>
 					<h1 class="text-3xl font-bold text-gradient flex items-center space-x-2">
 						<Leaf class="w-8 h-8 text-primary-600" />
-						<span>Éco-Boost Quotidien</span>
+						<span>Eco-Quest</span>
 					</h1>
 					<p class="text-gray-600">Missions écologiques pour un avenir durable</p>
 				</div>

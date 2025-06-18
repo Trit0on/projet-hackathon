@@ -32,7 +32,7 @@
 			<div>
 				<h4 class="font-semibold mb-3 flex items-center justify-center md:justify-start">
 					<Leaf class="w-5 h-5 mr-2" />
-					Éco-Boost Quotidien
+					Eco-Quest
 				</h4>
 				<p class="text-primary-100 text-sm">
 					Votre compagnon quotidien pour adopter des gestes écologiques et protéger notre planète.
@@ -83,7 +83,7 @@
 		<div class="border-t border-primary-400 mt-8 pt-6 text-center">
 			<div class="flex items-center justify-center space-x-2">
 				<p class="text-primary-100 text-sm">
-					© 2025 Éco-Boost Quotidien. Tous droits réservés.
+					© 2025 Eco-Quest. Tous droits réservés.
 				</p>
 				<p class="text-primary-100 text-sm">Fait avec ❤️ pour la planète.</p>
 			</div>

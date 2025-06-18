@@ -26,7 +26,7 @@
 </script>
 
 <svelte:head>
-  <title>E-Quiz</title>
+  <title>Eco-Quest</title>
   <meta name="description" content="Adoptez des gestes écologiques au quotidien avec nos missions, quiz et actions pour la planète." />
 </svelte:head>
 
