@@ -20,12 +20,7 @@
   let dailyQuiz: Quiz;
   let dailyAction: Action;
 
-  let badges: string[] = [];
-
-  $: userProgressValue = $userProgress;
-
-  // Réactif : met à jour badges quand userProgress change
-  type Progress = typeof $userProgress;
+  // Directly use the reactive store for badges
   $: badges = $userProgress.badges;
 
   onMount(() => {

@@ -19,7 +19,7 @@ function getNewBadges(progress: UserProgress, type: 'mission' | 'quiz' | 'points
   if (type === 'mission' || type === 'quiz') {
     const paliers = [1, 3, 5, 10];
     const badgeIds = paliers.map(n => type === 'mission' ? `Badge_Mission_${n}` : `Badge_Quiz_${n}`);
-    const completed = type === 'mission' ? progress.missionsCompleted + 1 : progress.quizzesCompleted + 1;
+    const completed = type === 'mission' ? progress.missionsCompleted : progress.quizzesCompleted;
     paliers.forEach((palier, i) => {
       if (completed === palier && !progress.badges.includes(badgeIds[i])) {
         newBadges.push(badgeIds[i]);
@@ -54,7 +54,7 @@ function getNewBadges(progress: UserProgress, type: 'mission' | 'quiz' | 'points
 
 function createUserProgressStore() {
   // Initialize with data from localStorage if available
-  const initialValue = browser 
+  const initialValue = browser
     ? JSON.parse(localStorage.getItem('userProgress') || JSON.stringify(defaultProgress))
     : defaultProgress;
 
@@ -64,24 +64,39 @@ function createUserProgressStore() {
     subscribe,
     completeMission: () => update(progress => {
       const today = new Date().toISOString().split('T')[0];
-      const isToday = progress.lastActiveDate === today;
+      const isNewDay = progress.lastActiveDate !== today;
+
+      // Calculate new streak
+      let newStreak = progress.currentStreak;
+      if (isNewDay) {
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        const yesterdayStr = yesterday.toISOString().split('T')[0];
+
+        // If last active was yesterday, continue streak. Otherwise reset to 1
+        newStreak = progress.lastActiveDate === yesterdayStr ? progress.currentStreak + 1 : 1;
+      }
+
       const newProgress = {
         ...progress,
         missionsCompleted: progress.missionsCompleted + 1,
         totalPoints: progress.totalPoints + 10,
-        currentStreak: isToday ? progress.currentStreak : progress.currentStreak + 1,
-        longestStreak: Math.max(progress.longestStreak, progress.currentStreak + 1),
+        currentStreak: newStreak,
+        longestStreak: Math.max(progress.longestStreak, newStreak),
         lastActiveDate: today
       };
+
       const newBadges = [
-        ...getNewBadges(progress, 'mission'),
-        ...getNewBadges({ ...newProgress }, 'points'),
-        ...getNewBadges({ ...newProgress }, 'streak')
+        ...getNewBadges(newProgress, 'mission'),
+        ...getNewBadges(newProgress, 'points'),
+        ...getNewBadges(newProgress, 'streak')
       ];
+
       const updatedProgress = {
         ...newProgress,
         badges: [...progress.badges, ...newBadges.filter(b => !progress.badges.includes(b))]
       };
+
       if (browser) {
         localStorage.setItem('userProgress', JSON.stringify(updatedProgress));
       }
@@ -89,24 +104,39 @@ function createUserProgressStore() {
     }),
     completeQuiz: (score: number) => update(progress => {
       const today = new Date().toISOString().split('T')[0];
-      const isToday = progress.lastActiveDate === today;
+      const isNewDay = progress.lastActiveDate !== today;
+
+      // Calculate new streak
+      let newStreak = progress.currentStreak;
+      if (isNewDay) {
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        const yesterdayStr = yesterday.toISOString().split('T')[0];
+
+        // If last active was yesterday, continue streak. Otherwise reset to 1
+        newStreak = progress.lastActiveDate === yesterdayStr ? progress.currentStreak + 1 : 1;
+      }
+
       const newProgress = {
         ...progress,
         quizzesCompleted: progress.quizzesCompleted + 1,
         totalPoints: progress.totalPoints + score * 5,
-        currentStreak: isToday ? progress.currentStreak : progress.currentStreak + 1,
-        longestStreak: Math.max(progress.longestStreak, progress.currentStreak + 1),
+        currentStreak: newStreak,
+        longestStreak: Math.max(progress.longestStreak, newStreak),
         lastActiveDate: today
       };
+
       const newBadges = [
-        ...getNewBadges(progress, 'quiz'),
-        ...getNewBadges({ ...newProgress }, 'points'),
-        ...getNewBadges({ ...newProgress }, 'streak')
+        ...getNewBadges(newProgress, 'quiz'),
+        ...getNewBadges(newProgress, 'points'),
+        ...getNewBadges(newProgress, 'streak')
       ];
+
       const updatedProgress = {
         ...newProgress,
         badges: [...progress.badges, ...newBadges.filter(b => !progress.badges.includes(b))]
       };
+
       if (browser) {
         localStorage.setItem('userProgress', JSON.stringify(updatedProgress));
       }
