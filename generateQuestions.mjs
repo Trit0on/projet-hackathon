@@ -1,8 +1,8 @@
-const fs = require('fs');
-const { OpenAI } = require('openai'); // ✅ nouveau import
+import fs from 'fs/promises';
+import { OpenAI } from 'openai';
 
 const openai = new OpenAI({
-    apiKey: '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', // Remplace par ta vraie clé
+    apiKey: process.env.OPENAI_API_KEY
 });
 
 const today = new Date().toISOString().split('T')[0];
@@ -19,9 +19,8 @@ Format JSON (dans un tableau).
 async function generateQuestions() {
     try {
         const response = await openai.chat.completions.create({
-            model: 'gpt-3.5-turbo',
-
-            messages: [{ role: 'user', content: prompt }],
+            model: 'gpt-4o-mini',
+            messages: [{ role: 'user', content: prompt.trim() }],
         });
 
         const content = response.choices[0].message.content;
@@ -32,7 +31,7 @@ async function generateQuestions() {
             questions: parsed
         };
 
-        fs.writeFileSync('./src/lib/data/questions.json', JSON.stringify(output, null, 2));
+        await fs.writeFile('./src/lib/data/questions.json', JSON.stringify(output, null, 2));
         console.log('✅ Questions générées et enregistrées dans questions.json');
     } catch (error) {
         console.error('❌ Erreur :', error.response?.data || error.message);
