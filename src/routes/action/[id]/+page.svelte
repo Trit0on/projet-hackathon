@@ -1,12 +1,13 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { getActionById, getAllActions } from '$lib/data/actions';
+  import type { Action } from '$lib/types';
   import { Leaf, Sparkles } from 'lucide-svelte';
 
 
-  let action;
+  let action: Action | undefined;
   $: id = $page.params.id;
-  let otherActions = [];
+  let otherActions: Action[] = [];
 
 $: if (id) {
   action = getActionById(id);
