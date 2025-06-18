@@ -47,8 +47,7 @@
   }
 
   function restartQuiz() {
-    const previousIds = quiz.questions.map(q => q.id);
-    quiz = generateDailyQuiz(previousIds);
+    quiz = generateDailyQuiz();
     currentQuestionIndex = 0;
     selectedAnswers = [];
     showExplanation = false;

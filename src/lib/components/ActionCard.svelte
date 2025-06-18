@@ -11,7 +11,10 @@
     Recycle,
     ShoppingCart,
     Apple,
-    TrendingUp
+    TrendingUp,
+    Leaf,
+    Award,
+    AlertCircle
   } from 'lucide-svelte';
 
   export let action: Action;
@@ -39,6 +42,12 @@
     intermediate: 'bg-yellow-100 text-yellow-800',
     advanced: 'bg-red-100 text-red-800'
   };
+
+  const difficultyIcons = {
+    beginner: Leaf,
+    intermediate: Award,
+    advanced: AlertCircle
+  };
 </script>
 
 <div class="card p-6 relative overflow-hidden">
@@ -49,7 +58,7 @@
     <!-- Header -->
     <div class="flex items-start space-x-3 mb-4">
       <div class="w-12 h-12 bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-xl flex items-center justify-center flex-shrink-0">
-        <BookOpen class="w-6 h-6 text-secondary-600" />
+        <svelte:component this={categoryIcons[action.category]} class="w-6 h-6 text-secondary-600" />
       </div>
       <div>
         <h3 class="text-xl font-bold text-gray-900 mb-2">{action.title}</h3>
@@ -63,8 +72,9 @@
         <svelte:component this={categoryIcons[action.category]} class="w-3 h-3" />
         <span>{action.category}</span>
       </span>
-      <span class="px-3 py-1 rounded-full text-xs font-medium {difficultyColors[action.difficulty]}">
-        {action.difficulty}
+      <span class="px-3 py-1 rounded-full text-xs font-medium {difficultyColors[action.difficulty]} flex items-center space-x-1">
+        <svelte:component this={difficultyIcons[action.difficulty]} class="w-3 h-3" />
+        <span>{action.difficulty}</span>
       </span>
     </div>
 
@@ -93,8 +103,9 @@
     {/if}
 
     <!-- Action Button -->
-    <a href={`/action/${action.id}`} class="btn-secondary w-full">
-      Explorer cette action 🌱
+    <a href={`/action/${action.id}`} class="btn-secondary w-full flex items-center justify-center space-x-2">
+      <span>Explorer cette action</span>
+      <ExternalLink class="w-4 h-4" />
     </a>
   </div>
 </div>
