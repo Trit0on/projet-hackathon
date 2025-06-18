@@ -31,7 +31,7 @@ export interface Action {
   id: string;
   title: string;
   description: string;
-  category: string;
+  category: 'energy' | 'water' | 'transport' | 'waste' | 'consumption' | 'food';
   difficulty: 'beginner' | 'intermediate' | 'advanced';
   timeToRead: string;
   resources?: string[];

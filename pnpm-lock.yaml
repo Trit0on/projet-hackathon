@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       lucide-svelte:
-        specifier: ^0.292.0
-        version: 0.292.0(svelte@4.2.20)
+        specifier: ^0.514.0
+        version: 0.514.0(svelte@4.2.20)
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.0.0
@@ -684,10 +684,10 @@ packages:
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
-  lucide-svelte@0.292.0:
-    resolution: {integrity: sha512-bnTpg9pbm6pQDc+YiLK2yxtRFk2Cc+hbzwjAPaV85k56x10CJ9LsXjon6wRrlNTSdxJR7GOsRjz0A5ZNu3Z7dg==}
+  lucide-svelte@0.514.0:
+    resolution: {integrity: sha512-fxvZu4srTezjMCM3Nzbofs1Bo/OW5F5ZhR9s41I4E/Yyic6Q90RUs6lMKfJX4iR8cULD4tFHybxvvHztI+Muqg==}
     peerDependencies:
-      svelte: '>=3 <5'
+      svelte: ^3 || ^4 || ^5.0.0-next.42
 
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
@@ -1636,7 +1636,7 @@ snapshots:
 
   lru-cache@10.4.3: {}
 
-  lucide-svelte@0.292.0(svelte@4.2.20):
+  lucide-svelte@0.514.0(svelte@4.2.20):
     dependencies:
       svelte: 4.2.20
 
