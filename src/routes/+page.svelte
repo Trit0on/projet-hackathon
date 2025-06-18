@@ -31,9 +31,9 @@
   <header class="bg-white shadow-sm border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div class="flex items-center justify-between">
-        <div class="flex items-center space-x-3">
-          <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-xl flex items-center justify-center">
-            <Leaf class="w-7 h-7 text-white" />
+        <div class="flex items-center space-x-6">
+          <div class="w-20 h-20 rounded-xl overflow-hidden">
+            <img src="/logo.png" alt="Éco-Boost Logo" class="w-full h-full object-contain" />
           </div>
           <div>
             <h1 class="text-3xl font-bold text-gradient">Éco-Boost Quotidien</h1>
