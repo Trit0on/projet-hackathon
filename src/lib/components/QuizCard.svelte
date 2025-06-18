@@ -2,6 +2,7 @@
   import type { Quiz } from '../types';
   import { userProgress } from '../stores/userProgress';
   import { CheckCircle, XCircle, HelpCircle } from 'lucide-svelte';
+  import { generateDailyQuiz } from '../data/quizzes';
   
   export let quiz: Quiz;
   
@@ -37,6 +38,8 @@
   }
   
   function restartQuiz() {
+    const previousIds = quiz.questions.map(q => q.id);
+    quiz = generateDailyQuiz(previousIds);
     currentQuestionIndex = 0;
     selectedAnswers = [];
     showExplanation = false;

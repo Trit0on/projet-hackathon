@@ -31,6 +31,7 @@ export interface Action {
   id: string;
   title: string;
   description: string;
+  descriptionDetail : string;
   category: string;
   difficulty: 'beginner' | 'intermediate' | 'advanced';
   timeToRead: string;

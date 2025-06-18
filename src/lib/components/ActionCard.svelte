@@ -66,8 +66,8 @@
     {/if}
     
     <!-- Action Button -->
-    <button class="btn-secondary w-full">
+    <a href={`/action/${action.id}`} class="btn-secondary w-full">
       Explorer cette action 🌱
-    </button>
+    </a>
   </div>
 </div>
