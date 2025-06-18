@@ -32,7 +32,7 @@ export interface Action {
   title: string;
   description: string;
   descriptionDetail : string;
-  category: string;
+  category: 'energy' | 'water' | 'transport' | 'waste' | 'consumption' | 'food';
   difficulty: 'beginner' | 'intermediate' | 'advanced';
   timeToRead: string;
   resources?: string[];
