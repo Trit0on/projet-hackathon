@@ -30,7 +30,7 @@
 </script>
 
 <svelte:head>
-  <title>Éco-Boost Quotidien - Missions Écologiques</title>
+  <title>E-Quiz</title>
   <meta name="description" content="Adoptez des gestes écologiques au quotidien avec nos missions, quiz et actions pour la planète." />
 </svelte:head>
 

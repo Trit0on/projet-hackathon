@@ -93,9 +93,8 @@
     {/if}
 
     <!-- Action Button -->
-    <button class="btn-secondary w-full flex items-center justify-center space-x-2">
-      <ExternalLink class="w-5 h-5" />
-      <span>Explorer cette action</span>
-    </button>
+    <a href={`/action/${action.id}`} class="btn-secondary w-full">
+      Explorer cette action 🌱
+    </a>
   </div>
 </div>

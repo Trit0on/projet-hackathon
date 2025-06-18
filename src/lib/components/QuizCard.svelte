@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { Quiz } from '../types';
   import { userProgress } from '../stores/userProgress';
+  import { generateDailyQuiz } from '../data/quizzes';
   import {
     CheckCircle,
     XCircle,
@@ -12,7 +13,6 @@
     Brain,
     Lightbulb
   } from 'lucide-svelte';
-
   export let quiz: Quiz;
 
   let currentQuestionIndex = 0;
@@ -47,6 +47,8 @@
   }
 
   function restartQuiz() {
+    const previousIds = quiz.questions.map(q => q.id);
+    quiz = generateDailyQuiz(previousIds);
     currentQuestionIndex = 0;
     selectedAnswers = [];
     showExplanation = false;
