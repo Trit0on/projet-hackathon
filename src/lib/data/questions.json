@@ -1,0 +1,200 @@
+{
+    "date": "2025-06-18",
+    "questions": [
+        {
+            "id": "q1",
+            "question": "Quel est le gaz à effet de serre le plus abondant émis par les activités humaines ?",
+            "options": [
+                "Oxygène",
+                "Dioxyde de carbone",
+                "Méthane",
+                "Azote"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Le dioxyde de carbone est majoritairement émis lors de la combustion des énergies fossiles.",
+            "category": "climate"
+        },
+        {
+            "id": "q2",
+            "question": "Combien d'années met une bouteille en plastique à se dégrader dans la nature ?",
+            "options": [
+                "50 ans",
+                "100 ans",
+                "450 ans",
+                "1000 ans"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Une bouteille plastique peut mettre jusqu’à 450 ans à se décomposer.",
+            "category": "waste"
+        },
+        {
+            "id": "q3",
+            "question": "Quel appareil consomme le plus d’électricité dans un foyer moyen ?",
+            "options": [
+                "Réfrigérateur",
+                "Télévision",
+                "Chauffe-eau",
+                "Ordinateur"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Le chauffe-eau est souvent l’appareil le plus énergivore dans une maison.",
+            "category": "energy"
+        },
+        {
+            "id": "q4",
+            "question": "Quel mode de transport est le plus écologique ?",
+            "options": [
+                "Voiture électrique",
+                "Train",
+                "Avion",
+                "Bus diesel"
+            ],
+            "correctAnswer": 1,
+            "explanation": "La voiture électrique est plus propre, surtout si alimentée par de l’énergie verte.",
+            "category": "transport"
+        },
+        {
+            "id": "q5",
+            "question": "Combien de litres d’eau sont nécessaires pour produire un jean ?",
+            "options": [
+                "500 L",
+                "1000 L",
+                "5000 L",
+                "10 000 L"
+            ],
+            "correctAnswer": 3,
+            "explanation": "Il faut environ 10 000 L d’eau pour fabriquer un seul jean.",
+            "category": "water"
+        },
+        {
+            "id": "q6",
+            "question": "Quelle est la source d'énergie renouvelable la plus utilisée dans le monde ?",
+            "options": [
+                "Solaire",
+                "Éolien",
+                "Hydroélectrique",
+                "Géothermie"
+            ],
+            "correctAnswer": 2,
+            "explanation": "L’énergie hydroélectrique représente la majorité des énergies renouvelables.",
+            "category": "energy"
+        },
+        {
+            "id": "q7",
+            "question": "Quel geste permet de réduire sa consommation d’eau à la salle de bain ?",
+            "options": [
+                "Remplir la baignoire",
+                "Laver les cheveux tous les jours",
+                "Installer un pommeau économique",
+                "Augmenter la température de l’eau"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Un pommeau économique réduit le débit sans réduire le confort.",
+            "category": "water"
+        },
+        {
+            "id": "q8",
+            "question": "Combien de pourcentage de la nourriture mondiale est gaspillée ?",
+            "options": [
+                "10%",
+                "20%",
+                "30%",
+                "40%"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Environ 30% de la nourriture produite est jetée chaque année.",
+            "category": "food"
+        },
+        {
+            "id": "q9",
+            "question": "Quelle action a le plus d’impact pour réduire ses émissions de CO₂ ?",
+            "options": [
+                "Recyclage",
+                "Réduction de la viande",
+                "Douches courtes",
+                "Planter un arbre"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Réduire la consommation de viande réduit fortement l’empreinte carbone.",
+            "category": "climate"
+        },
+        {
+            "id": "q10",
+            "question": "Quel déchet ne doit pas être jeté dans une poubelle classique ?",
+            "options": [
+                "Papier",
+                "Carton",
+                "Pile usagée",
+                "Épluchures"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Les piles contiennent des métaux lourds dangereux pour l’environnement.",
+            "category": "waste"
+        },
+        {
+            "id": "q11",
+            "question": "Quelle plante est souvent utilisée pour dépolluer l’air intérieur ?",
+            "options": [
+                "Orchidée",
+                "Cactus",
+                "Fougère",
+                "Lierre"
+            ],
+            "correctAnswer": 3,
+            "explanation": "Le lierre est une plante dépolluante très efficace en intérieur.",
+            "category": "air"
+        },
+        {
+            "id": "q12",
+            "question": "Quel est le principal composant du compost domestique ?",
+            "options": [
+                "Verre",
+                "Déchets organiques",
+                "Papier",
+                "Bois traité"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Le compost est constitué de déchets organiques (épluchures, restes, etc.).",
+            "category": "waste"
+        },
+        {
+            "id": "q13",
+            "question": "Quel type de sac est le plus écologique pour les courses ?",
+            "options": [
+                "Sac plastique à usage unique",
+                "Sac biodégradable",
+                "Sac en papier",
+                "Sac en tissu réutilisable"
+            ],
+            "correctAnswer": 3,
+            "explanation": "Le sac en tissu, réutilisé plusieurs fois, est le plus écologique.",
+            "category": "consumption"
+        },
+        {
+            "id": "q14",
+            "question": "Quelle activité consomme le plus d’eau ?",
+            "options": [
+                "Boire",
+                "Laver la voiture",
+                "Tirer la chasse",
+                "Arroser les plantes"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Tirer la chasse consomme souvent 6 à 12 litres à chaque fois.",
+            "category": "water"
+        },
+        {
+            "id": "q15",
+            "question": "Quel type de chauffage est le plus respectueux de l’environnement ?",
+            "options": [
+                "Chauffage au fioul",
+                "Poêle à bois",
+                "Chauffage électrique classique",
+                "Pompe à chaleur"
+            ],
+            "correctAnswer": 3,
+            "explanation": "La pompe à chaleur est très performante et écologique si bien utilisée.",
+            "category": "energy"
+        }
+    ]
+}
