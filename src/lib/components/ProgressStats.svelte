@@ -1,7 +1,7 @@
 <script lang="ts">
   import { userProgress } from '../stores/userProgress';
   import { Trophy, Target, Zap, Award } from 'lucide-svelte';
-  
+
   $: progress = $userProgress;
 </script>
 
@@ -10,7 +10,7 @@
     <h2 class="text-2xl font-bold text-gray-900">Vos Progrès</h2>
     <Trophy class="w-8 h-8 text-accent-500" />
   </div>
-  
+
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
     <!-- Total Points -->
     <div class="text-center">
@@ -20,7 +20,7 @@
       <div class="text-2xl font-bold text-gray-900">{progress.totalPoints}</div>
       <div class="text-sm text-gray-600">Points</div>
     </div>
-    
+
     <!-- Missions Completed -->
     <div class="text-center">
       <div class="w-16 h-16 mx-auto mb-2 bg-gradient-to-br from-secondary-500 to-secondary-600 rounded-full flex items-center justify-center">
@@ -29,7 +29,7 @@
       <div class="text-2xl font-bold text-gray-900">{progress.missionsCompleted}</div>
       <div class="text-sm text-gray-600">Missions</div>
     </div>
-    
+
     <!-- Quizzes Completed -->
     <div class="text-center">
       <div class="w-16 h-16 mx-auto mb-2 bg-gradient-to-br from-accent-500 to-accent-600 rounded-full flex items-center justify-center">
@@ -38,7 +38,7 @@
       <div class="text-2xl font-bold text-gray-900">{progress.quizzesCompleted}</div>
       <div class="text-sm text-gray-600">Quiz</div>
     </div>
-    
+
     <!-- Current Streak -->
     <div class="text-center">
       <div class="w-16 h-16 mx-auto mb-2 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center">
@@ -48,7 +48,7 @@
       <div class="text-sm text-gray-600">Série</div>
     </div>
   </div>
-  
+
   {#if progress.longestStreak > 0}
     <div class="mt-6 pt-6 border-t border-gray-200">
       <div class="text-center">
