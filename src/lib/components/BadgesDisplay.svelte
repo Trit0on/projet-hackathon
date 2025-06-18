@@ -17,8 +17,8 @@
     Badge_Points_300: { label: '300 Points', img: '/src/assets/points300.png' },
     Badge_Streak_3: { label: 'Série de 3 jours', img: '/src/assets/streak3.png' },
     Badge_Streak_7: { label: 'Série de 7 jours', img: '/src/assets/streak7.png' },
-    Badge_Streak_14: { label: 'Série de 14 jours', img: '/src/assets/streak14.png' },
-    Badge_Streak_30: { label: 'Série de 30 jours', img: '/src/assets/streak30.png' },
+    Badge_Streak_14: { label: 'Série de 14 jours', img: '/src/assets/streak7.png' },
+    Badge_Streak_30: { label: 'Série de 30 jours', img: '/src/assets/streak7.png' },
   };
 </script>
 {#if badges.length !== 0}
