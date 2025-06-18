@@ -44,4 +44,5 @@ export interface UserProgress {
   currentStreak: number;
   longestStreak: number;
   lastActiveDate: string;
+  badges: string[]; // Liste des badges obtenus
 }

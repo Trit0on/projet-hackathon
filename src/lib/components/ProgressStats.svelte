@@ -3,6 +3,18 @@
   import { Trophy, Target, Zap, Award } from 'lucide-svelte';
   
   $: progress = $userProgress;
+
+  // Liste des badges à afficher (id et nom, image à ajouter plus tard)
+  const badgeLabels = {
+    Badge_Quiz_1: '1er Quiz',
+    Badge_Quiz_3: '3 Quiz',
+    Badge_Quiz_5: '5 Quiz',
+    Badge_Quiz_10: '10 Quiz',
+    Badge_Mission_1: '1ère Mission',
+    Badge_Mission_3: '3 Missions',
+    Badge_Mission_5: '5 Missions',
+    Badge_Mission_10: '10 Missions'
+  };
 </script>
 
 <div class="card-gradient p-6">
@@ -58,4 +70,5 @@
       </div>
     </div>
   {/if}
+
 </div>

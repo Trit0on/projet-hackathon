@@ -9,10 +9,20 @@
   import { getDailyAction } from '$lib/data/actions';
   import { Leaf, Sparkles } from 'lucide-svelte';
   import type { Mission, Quiz, Action } from '$lib/types';
+  import { userProgress } from '$lib/stores/userProgress';
+  import BadgesDisplay from '$lib/components/BadgesDisplay.svelte';
 
   let dailyMission: Mission;
   let dailyQuiz: Quiz;
   let dailyAction: Action;
+
+  let badges: string[] = [];
+
+  $: userProgressValue = $userProgress;
+
+  // Réactif : met à jour badges quand userProgress change
+  type Progress = typeof $userProgress;
+  $: badges = $userProgress.badges;
 
   onMount(() => {
     dailyMission = getDailyMission();
@@ -50,6 +60,12 @@
 
   <!-- Main Content -->
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- Badges -->
+    <div class="mb-8">
+      <BadgesDisplay {badges} />
+    </div>
+
     <!-- Progress Stats -->
     <div class="mb-8">
       <ProgressStats />
