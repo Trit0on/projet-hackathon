@@ -9,11 +9,11 @@
   import { getDailyAction } from '$lib/data/actions';
   import { Leaf, Sparkles } from 'lucide-svelte';
   import type { Mission, Quiz, Action } from '$lib/types';
-  
+
   let dailyMission: Mission;
   let dailyQuiz: Quiz;
   let dailyAction: Action;
-  
+
   onMount(() => {
     dailyMission = getDailyMission();
     dailyQuiz = generateDailyQuiz();
